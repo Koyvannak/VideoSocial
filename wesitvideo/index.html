@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoSocial - Share and Discover Video Series</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom styles */
+    .hero-gradient {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    }
+    
+    .animated-button {
+      transition: all 0.3s ease;
+    }
+    
+    .animated-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .animated-button:hover .button-overlay {
+      opacity: 1;
+    }
+    
+    .button-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .category-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Dark mode toggle */
+    .dark-mode {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+    
+    .dark-mode .bg-white {
+      background-color: #2d3748;
+    }
+    
+    .dark-mode .text-gray-600 {
+      color: #a0aec0;
+    }
+    
+    .dark-mode .bg-gray-100 {
+      background-color: #2d3748;
+    }
+    
+    .dark-mode .bg-gray-200 {
+      background-color: #4a5568;
+    }
+    
+    .dark-mode .border-gray-200 {
+      border-color: #4a5568;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 w-full border-b bg-white">
+    <div class="container mx-auto flex h-16 items-center px-4">
+      <button class="mr-2 md:hidden bg-transparent p-2 rounded-md">
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      
+      <a href="index.html" class="flex items-center gap-2 mr-4">
+        <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center">
+          <i class="fas fa-play text-white text-xs"></i>
+        </div>
+        <span class="font-bold text-xl hidden sm:inline-block">VideoSocial</span>
+      </a>
+      
+      <div class="flex-1 flex items-center max-w-md mx-4">
+        <form class="flex w-full">
+          <input 
+            type="search" 
+            placeholder="Search videos..." 
+            class="w-full px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+          <button type="submit" class="bg-gray-200 px-3 py-2 rounded-r-md">
+            <i class="fas fa-search h-4 w-4"></i>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <!-- Non-authenticated options -->
+        <button id="theme-toggle" class="p-2 rounded-full">
+          <i class="fas fa-sun"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+        
+        <a href="login.html" class="hidden sm:inline-flex px-4 py-2 border border-gray-300 rounded-md">
+          Sign in
+        </a>
+        
+        <a href="register.html" class="px-4 py-2 bg-blue-600 text-white rounded-md">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Hero Section -->
+    <section class="mb-12">
+      <div class="relative rounded-xl overflow-hidden">
+        <img
+          src="https://placehold.co/1200x400"
+          alt="Featured Series Banner"
+          class="w-full h-96 object-cover"
+        >
+        <div class="absolute inset-0 hero-gradient flex flex-col justify-end p-8">
+          <h1 class="text-4xl font-bold text-white mb-2">Experience the Best Video Entertainment</h1>
+          <p class="text-xl text-white opacity-90 mb-6">
+            Dive into captivating series, exclusive content, and join a community of passionate viewers
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="upload.html" class="relative inline-flex items-center px-6 py-3 bg-white bg-opacity-10 text-white border border-white border-opacity-20 rounded-md animated-button">
+              <i class="fas fa-upload mr-2"></i>
+              Upload a Video
+              <span class="button-overlay rounded-md"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Videos -->
+    <section class="mb-12">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">Featured Videos</h2>
+        <a href="videos.html" class="text-blue-600 hover:underline">
+          View All
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Video Card 1 -->
+        <div class="group">
+          <a href="videos/1.html" class="block">
+            <div class="relative mb-3">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Season Finale: The Last Episode" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                24:15
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center">
+                <span>SC</span>
+              </div>
+              <div>
+                <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Season Finale: The Last Episode</h3>
+                <p class="text-sm text-gray-600 mt-1">SeriesCreator</p>
+                <p class="text-xs text-gray-600">
+                  1.2M views • 2 days ago
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Video Card 2 -->
+        <div class="group">
+          <a href="videos/2.html" class="block">
+            <div class="relative mb-3">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Behind the Scenes: Making of Episode 5" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                15:30
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center">
+                <span>BS</span>
+              </div>
+              <div>
+                <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Behind the Scenes: Making of Episode 5</h3>
+                <p class="text-sm text-gray-600 mt-1">BehindTheScenes</p>
+                <p class="text-xs text-gray-600">
+                  890K views • 1 week ago
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Video Card 3 -->
+        <div class="group">
+          <a href="videos/3.html" class="block">
+            <div class="relative mb-3">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Character Analysis: The Protagonist" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                18:45
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center">
+                <span>VA</span>
+              </div>
+              <div>
+                <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Character Analysis: The Protagonist</h3>
+                <p class="text-sm text-gray-600 mt-1">VideoAnalyst</p>
+                <p class="text-xs text-gray-600">
+                  567K views • 3 days ago
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Video Card 4 -->
+        <div class="group">
+          <a href="videos/4.html" class="block">
+            <div class="relative mb-3">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Top 10 Moments from Season 2" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                22:10
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <div class="h-9 w-9 rounded-full bg-gray-300 flex items-center justify-center">
+                <span>TT</span>
+              </div>
+              <div>
+                <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Top 10 Moments from Season 2</h3>
+                <p class="text-sm text-gray-600 mt-1">TopTenChannel</p>
+                <p class="text-xs text-gray-600">
+                  1.5M views • 5 days ago
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Trending Now</h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Trending Video 1 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <a href="videos/10.html">
+            <div class="relative">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Season 3 Trailer: What to Expect" 
+                class="w-full aspect-video object-cover"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                3:45
+              </div>
+            </div>
+            
+            <div class="p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 mt-1 rounded-full bg-gray-300 flex items-center justify-center">
+                  <span>SC</span>
+                </div>
+                
+                <div>
+                  <h3 class="font-medium line-clamp-2">Season 3 Trailer: What to Expect</h3>
+                  <p class="text-sm text-gray-600 mt-1">SeriesCreator</p>
+                  <p class="text-xs text-gray-600 mb-2">
+                    4.5M views • 1 day ago
+                  </p>
+                  <p class="text-sm line-clamp-2 text-gray-700">
+                    Get a sneak peek at the upcoming season with exclusive behind-the-scenes footage and cast interviews.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Trending Video 2 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <a href="videos/11.html">
+            <div class="relative">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Fan Theory: The Hidden Clues in Episode 7" 
+                class="w-full aspect-video object-cover"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                15:20
+              </div>
+            </div>
+            
+            <div class="p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 mt-1 rounded-full bg-gray-300 flex items-center justify-center">
+                  <span>TC</span>
+                </div>
+                
+                <div>
+                  <h3 class="font-medium line-clamp-2">Fan Theory: The Hidden Clues in Episode 7</h3>
+                  <p class="text-sm text-gray-600 mt-1">TheoryChannel</p>
+                  <p class="text-xs text-gray-600 mb-2">
+                    2.1M views • 3 days ago
+                  </p>
+                  <p class="text-sm line-clamp-2 text-gray-700">
+                    This video breaks down all the hidden clues and easter eggs you might have missed in the latest episode.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Trending Video 3 -->
+        <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow">
+          <a href="videos/12.html">
+            <div class="relative">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Actor Interview: Playing the Villain" 
+                class="w-full aspect-video object-cover"
+              >
+              <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white text-xs px-1.5 py-0.5 rounded">
+                22:10
+              </div>
+            </div>
+            
+            <div class="p-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 mt-1 rounded-full bg-gray-300 flex items-center justify-center">
+                  <span>ET</span>
+                </div>
+                
+                <div>
+                  <h3 class="font-medium line-clamp-2">Actor Interview: Playing the Villain</h3>
+                  <p class="text-sm text-gray-600 mt-1">EntertainmentToday</p>
+                  <p class="text-xs text-gray-600 mb-2">
+                    1.8M views • 2 days ago
+                  </p>
+                  <p class="text-sm line-clamp-2 text-gray-700">
+                    An exclusive interview with the actor who plays the main antagonist, discussing character motivations and filming challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Browse Categories</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Category Cards -->
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Drama</h3>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Comedy</h3>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Action</h3>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Documentary</h3>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Animation</h3>
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow text-center category-card">
+          <div class="w-16 h-16 mx-auto mb-2 bg-gray-200 rounded-full flex items-center justify-center">
+            <span class="text-2xl">📺</span>
+          </div>
+          <h3 class="font-medium">Reality</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white rounded-xl p-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Share Your Videos?</h2>
+      <p class="text-xl mb-6 max-w-2xl mx-auto">
+        Join our community of creators and share your video series with millions of viewers worldwide.
+      </p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">VideoSocial</h3>
+          <p class="text-gray-600">
+            The ultimate platform for video series enthusiasts and creators.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Careers
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Press
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Help Center
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Community Guidelines
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Creator Studio
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Copyright
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+        <p>&copy; 2025 VideoSocial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple dark mode toggle
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      
+      // Toggle icon
+      const icon = this.querySelector('i');
+      if (icon.classList.contains('fa-sun')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    });
+    
+    // Mobile menu toggle
+    document.querySelector('.fa-bars').parentElement.addEventListener('click', function() {
+      // In a real implementation, this would show/hide the mobile menu
+      alert('Mobile menu would open here');
+    });
+  </script>
+</body>
+</html>

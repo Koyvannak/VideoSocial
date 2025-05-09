@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Season Finale: The Last Episode - VideoSocial</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom styles */
+    .dark-mode {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+    
+    .dark-mode .bg-white {
+      background-color: #2d3748;
+    }
+    
+    .dark-mode .text-gray-600 {
+      color: #a0aec0;
+    }
+    
+    .dark-mode .bg-gray-100 {
+      background-color: #2d3748;
+    }
+    
+    .dark-mode .bg-gray-200 {
+      background-color: #4a5568;
+    }
+    
+    .dark-mode .border-gray-200 {
+      border-color: #4a5568;
+    }
+    
+    .tab-active {
+      border-bottom: 2px solid #3b82f6;
+      color: #3b82f6;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 w-full border-b bg-white">
+    <div class="container mx-auto flex h-16 items-center px-4">
+      <button class="mr-2 md:hidden bg-transparent p-2 rounded-md">
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      
+      <a href="../index.html" class="flex items-center gap-2 mr-4">
+        <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center">
+          <i class="fas fa-play text-white text-xs"></i>
+        </div>
+        <span class="font-bold text-xl hidden sm:inline-block">VideoSocial</span>
+      </a>
+      
+      <div class="flex-1 flex items-center max-w-md mx-4">
+        <form class="flex w-full">
+          <input 
+            type="search" 
+            placeholder="Search videos..." 
+            class="w-full px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+          <button type="submit" class="bg-gray-200 px-3 py-2 rounded-r-md">
+            <i class="fas fa-search h-4 w-4"></i>
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <!-- Non-authenticated options -->
+        <button id="theme-toggle" class="p-2 rounded-full">
+          <i class="fas fa-sun"></i>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+        
+        <a href="../login.html" class="hidden sm:inline-flex px-4 py-2 border border-gray-300 rounded-md">
+          Sign in
+        </a>
+        
+        <a href="../register.html" class="px-4 py-2 bg-blue-600 text-white rounded-md">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <!-- Video Player -->
+        <div class="bg-black rounded-lg overflow-hidden mb-4 aspect-video flex items-center justify-center">
+          <div class="text-white text-center">
+            <p class="text-xl mb-2">Video Player</p>
+            <p class="text-sm text-gray-400">(Video ID: 1)</p>
+          </div>
+        </div>
+        
+        <!-- Video Info -->
+        <div class="mb-6">
+          <h1 class="text-2xl font-bold mb-2">Season 3 Episode 5: The Big Reveal</h1>
+          <div class="flex flex-wrap justify-between items-center mb-4">
+            <div class="text-sm text-gray-600">
+              3.4M views • 2 weeks ago
+            </div>
+            <div class="flex space-x-4 mt-2 sm:mt-0">
+              <button class="flex items-center gap-1 text-gray-700 hover:text-blue-600">
+                <i class="far fa-thumbs-up"></i>
+                <span>15.4K</span>
+              </button>
+              <button class="flex items-center gap-1 text-gray-700 hover:text-blue-600">
+                <i class="far fa-comment"></i>
+                <span>1,245</span>
+              </button>
+              <button class="flex items-center gap-1 text-gray-700 hover:text-blue-600">
+                <i class="fas fa-share"></i>
+                <span>Share</span>
+              </button>
+              <button class="flex items-center gap-1 text-gray-700 hover:text-blue-600">
+                <i class="far fa-bookmark"></i>
+                <span>Save</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="border-t border-b border-gray-200 py-4 mb-4">
+            <div class="flex justify-between items-center">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
+                  <span>SC</span>
+                </div>
+                <div>
+                  <a href="../channel/seriesCreator.html" class="font-medium hover:underline">
+                    SeriesCreator
+                  </a>
+                  <div class="text-sm text-gray-600">1.2M subscribers</div>
+                </div>
+              </div>
+              <button class="px-4 py-2 bg-red-600 text-white rounded-md">
+                Subscribe
+              </button>
+            </div>
+          </div>
+          
+          <div class="bg-gray-100 rounded-lg p-4">
+            <p class="whitespace-pre-line">In this episode, we finally discover the truth behind the mysterious events that have been happening throughout the season. The main character faces their biggest challenge yet and must make a difficult decision that will affect everyone.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <a href="../tags/drama.html" class="text-blue-600 text-sm hover:underline">#drama</a>
+              <a href="../tags/mystery.html" class="text-blue-600 text-sm hover:underline">#mystery</a>
+              <a href="../tags/season3.html" class="text-blue-600 text-sm hover:underline">#season3</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Comments Section -->
+        <div>
+          <div class="mb-4 border-b border-gray-200">
+            <div class="flex space-x-4">
+              <button class="py-2 px-1 tab-active" data-tab="comments">Comments (1,245)</button>
+              <button class="py-2 px-1" data-tab="episodes">Episodes</button>
+              <button class="py-2 px-1" data-tab="details">Details</button>
+            </div>
+          </div>
+          
+          <div id="comments-tab" class="tab-content active">
+            <div class="mb-6">
+              <div class="flex gap-4 mb-6">
+                <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
+                  <span>YA</span>
+                </div>
+                <div class="flex-1">
+                  <input 
+                    type="text" 
+                    placeholder="Add a comment..." 
+                    class="w-full p-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-blue-500"
+                  >
+                </div>
+              </div>
+              
+              <div class="space-y-6">
+                <!-- Comment 1 -->
+                <div class="flex gap-4">
+                  <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
+                    <span>VF</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="font-medium">VideoFan123</span>
+                      <span class="text-sm text-gray-600">3 days ago</span>
+                    </div>
+                    <p class="mb-2">This episode was mind-blowing! I can't believe what happened to the main character. The writing on this show is incredible.</p>
+                    <div class="flex items-center gap-4 text-sm">
+                      <button class="flex items-center gap-1 text-gray-600 hover:text-gray-900">
+                        <i class="far fa-thumbs-up text-sm"></i>
+                        <span>342</span>
+                      </button>
+                      <button class="text-gray-600 hover:text-gray-900">Reply</button>
+                      <button class="text-gray-600 hover:text-gray-900">
+                        View 15 replies
+                      </button>
+                      <button class="ml-auto text-gray-600 hover:text-gray-900">
+                        <i class="far fa-flag text-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Comment 2 -->
+                <div class="flex gap-4">
+                  <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
+                    <span>SL</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="font-medium">SeriesLover</span>
+                      <span class="text-sm text-gray-600">5 days ago</span>
+                    </div>
+                    <p class="mb-2">I've been waiting for this reveal since season 1. The way they connected all the dots was so satisfying. Can't wait for the next episode!</p>
+                    <div class="flex items-center gap-4 text-sm">
+                      <button class="flex items-center gap-1 text-gray-600 hover:text-gray-900">
+                        <i class="far fa-thumbs-up text-sm"></i>
+                        <span>256</span>
+                      </button>
+                      <button class="text-gray-600 hover:text-gray-900">Reply</button>
+                      <button class="text-gray-600 hover:text-gray-900">
+                        View 8 replies
+                      </button>
+                      <button class="ml-auto text-gray-600 hover:text-gray-900">
+                        <i class="far fa-flag text-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Comment 3 -->
+                <div class="flex gap-4">
+                  <div class="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center">
+                    <span>CV</span>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="font-medium">CriticalViewer</span>
+                      <span class="text-sm text-gray-600">1 week ago</span>
+                    </div>
+                    <p class="mb-2">While I enjoyed the episode, I think they could have developed the subplot a bit more. Still, the acting was superb as always.</p>
+                    <div class="flex items-center gap-4 text-sm">
+                      <button class="flex items-center gap-1 text-gray-600 hover:text-gray-900">
+                        <i class="far fa-thumbs-up text-sm"></i>
+                        <span>128</span>
+                      </button>
+                      <button class="text-gray-600 hover:text-gray-900">Reply</button>
+                      <button class="text-gray-600 hover:text-gray-900">
+                        View 23 replies
+                      </button>
+                      <button class="ml-auto text-gray-600 hover:text-gray-900">
+                        <i class="far fa-flag text-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="episodes-tab" class="tab-content">
+            <div class="space-y-4">
+              <h3 class="text-xl font-bold mb-4">Season 3 Episodes</h3>
+              
+              <!-- Episodes list -->
+              <div class="flex gap-4 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 5</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">
+                    Episode 5: The Big Reveal
+                    <span class="ml-2 text-blue-600 text-sm">(Current)</span>
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    3.4M views • 2 weeks ago
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-100">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 4</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Episode 4: The Buildup</h4>
+                  <p class="text-sm text-gray-600">
+                    2.8M views • 3 weeks ago
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-100">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 6</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Episode 6: The Aftermath</h4>
+                  <p class="text-sm text-gray-600">
+                    1.9M views • 1 week ago
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-100">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 3</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Episode 3: The Journey</h4>
+                  <p class="text-sm text-gray-600">
+                    2.3M views • 4 weeks ago
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-100">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 2</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Episode 2: The Challenge</h4>
+                  <p class="text-sm text-gray-600">
+                    2.5M views • 5 weeks ago
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 p-3 rounded-lg hover:bg-gray-100">
+                <div class="w-24 h-16 bg-gray-200 rounded flex items-center justify-center">
+                  <span class="text-sm">Ep 1</span>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium">Episode 1: The Beginning</h4>
+                  <p class="text-sm text-gray-600">
+                    3.1M views • 6 weeks ago
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="details-tab" class="tab-content">
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-bold">Release Date</h3>
+                <p>May 15, 2025</p>
+              </div>
+              <div>
+                <h3 class="font-bold">Cast</h3>
+                <p>Actor Name, Actor Name, Actor Name, Actor Name</p>
+              </div>
+              <div>
+                <h3 class="font-bold">Director</h3>
+                <p>Director Name</p>
+              </div>
+              <div>
+                <h3 class="font-bold">Genre</h3>
+                <p>Drama, Mystery, Thriller</p>
+              </div>
+              <div>
+                <h3 class="font-bold">Content Rating</h3>
+                <p>TV-MA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sidebar - Related Videos -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Related Videos</h3>
+        <div class="space-y-4">
+          <!-- Related Video 1 -->
+          <a href="5.html" class="flex gap-3 group">
+            <div class="relative flex-shrink-0 w-40">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Season 3 Episode 4: The Buildup" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-xs px-1 rounded">
+                26:45
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Season 3 Episode 4: The Buildup</h3>
+              <p class="text-sm text-gray-600 mt-1">SeriesCreator</p>
+              <p class="text-xs text-gray-600 mt-1">
+                2.8M views • 3 weeks ago
+              </p>
+            </div>
+          </a>
+          
+          <!-- Related Video 2 -->
+          <a href="6.html" class="flex gap-3 group">
+            <div class="relative flex-shrink-0 w-40">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Season 3 Episode 6: The Aftermath" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-xs px-1 rounded">
+                28:10
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Season 3 Episode 6: The Aftermath</h3>
+              <p class="text-sm text-gray-600 mt-1">SeriesCreator</p>
+              <p class="text-xs text-gray-600 mt-1">
+                1.9M views • 1 week ago
+              </p>
+            </div>
+          </a>
+          
+          <!-- Related Video 3 -->
+          <a href="7.html" class="flex gap-3 group">
+            <div class="relative flex-shrink-0 w-40">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Fan Theories: What Will Happen Next?" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-xs px-1 rounded">
+                15:20
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Fan Theories: What Will Happen Next?</h3>
+              <p class="text-sm text-gray-600 mt-1">TheoryChannel</p>
+              <p class="text-xs text-gray-600 mt-1">
+                567K views • 10 days ago
+              </p>
+            </div>
+          </a>
+          
+          <!-- Related Video 4 -->
+          <a href="8.html" class="flex gap-3 group">
+            <div class="relative flex-shrink-0 w-40">
+              <img 
+                src="https://placehold.co/320x180"
+                alt="Character Development Analysis" 
+                class="w-full aspect-video object-cover rounded-lg"
+              >
+              <div class="absolute bottom-1 right-1 bg-black bg-opacity-80 text-white text-xs px-1 rounded">
+                20:15
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-medium line-clamp-2 group-hover:text-blue-600">Character Development Analysis</h3>
+              <p class="text-sm text-gray-600 mt-1">VideoAnalyst</p>
+              <p class="text-xs text-gray-600 mt-1">
+                423K views • 2 weeks ago
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-100 py-8 mt-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-4">VideoSocial</h3>
+          <p class="text-gray-600">
+            The ultimate platform for video series enthusiasts and creators.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Company</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Careers
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Press
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Help Center
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Community Guidelines
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Creator Studio
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Legal</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:underline">
+                Copyright
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+        <p>&copy; 2025 VideoSocial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple dark mode toggle
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      
+      // Toggle icon
+      const icon = this.querySelector('i');
+      if (icon.classList.contains('fa-sun')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    });
+    
+    // Tab switching
+    const tabButtons = document.querySelectorAll('[data-tab]');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('tab-active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('tab-active');
+        
+        // Show corresponding content
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
